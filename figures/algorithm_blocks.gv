@@ -1,0 +1,23 @@
+digraph algorithm_blocks {
+	rankdir=LR
+	node [fontname="Helvetica, sans-serif" fontsize=14 shape=plaintext]
+	I [label=hits]
+	O [label=tracks]
+	node [color="#1C7C4C" fixed_size=true fontcolor=white shape=square style="rounded,filled" width=1.3]
+	A [label="Primitive
+Conversion"]
+	B [label="Pattern
+Recognition"]
+	C [label="Track
+Building"]
+	D [label="Parameter
+Assignment"]
+	edge [arrowsize=0.6 fontname="Helvetica, sans-serif" fontsize=12]
+	I -> A [label=""]
+	A -> B [label="conv.
+hits"]
+	B -> C [label=roads]
+	C -> D [label="proto-
+tracks"]
+	D -> O [label=""]
+}
