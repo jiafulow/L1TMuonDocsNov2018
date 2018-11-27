@@ -1,8 +1,9 @@
 digraph neural_network {
-	node [color="#FF7F7F" label="" penwdith=3 shape=circle style=solid]
+	node [color="#FF7F7F" fillcolor="#FFE5E5" label="" penwidth=3 shape=circle style=filled]
 	edge [arrowhead=none color="#999999" weight=.1]
 	rankdir=LR size="7,10"
-	nodesep=.1 outputorder=edgesfirst ranksep=3.5 splines=line
+	nodesep=.1 ranksep=3.5 splines=line
+	outputorder=edgesfirst overlap=false
 	subgraph cluster_0 {
 		color=none label=Input
 		node_0_0
