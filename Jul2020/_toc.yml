@@ -1,0 +1,17 @@
+- file: intro
+
+- file: overview
+- file: muon-trigger-primitives
+  sections:
+    - file: muon-csc
+    - file: muon-rpc
+    - file: muon-gem
+    - file: muon-dt
+- file: algorithm-blocks
+  sections:
+    - file: algo-pc
+    - file: algo-pr
+    - file: algo-tb
+    - file: algo-pa
+
+- file: summary
