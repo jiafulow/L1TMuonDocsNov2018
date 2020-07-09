@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Resistive Plate Chamber &#8212; My Jupyter Book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Gas Electron Multiplier" href="muon-gem.html" />
+    <link rel="prev" title="Cathode Strip Chamber" href="muon-csc.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="intro.html">Introduction</a>
+  </li>
+  <li class="">
+    <a href="overview.html">Overview</a>
+  </li>
+  <li class="active">
+    <a href="muon-trigger-primitives.html">Trigger Primitives</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="muon-csc.html">Cathode Strip Chamber</a>
+    </li>
+    <li class="active">
+      <a href="">Resistive Plate Chamber</a>
+    </li>
+    <li class="">
+      <a href="muon-gem.html">Gas Electron Multiplier</a>
+    </li>
+    <li class="">
+      <a href="muon-dt.html">Drift Tube</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="algorithm-blocks.html">Algorithm Blocks</a>
+  </li>
+  <li class="">
+    <a href="summary.html">Summary</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/muon-rpc.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#geometry" class="nav-link">Geometry</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#chamber" class="nav-link">Chamber</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#data-word" class="nav-link">Data word</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="resistive-plate-chamber">
+<h1>Resistive Plate Chamber<a class="headerlink" href="#resistive-plate-chamber" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="geometry">
+<h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
+<p>There are 4 RPC stations in the endcaps, namely RE1, RE2, RE3, and RE4. In Phase 0 and Phase 1, there are 2 rings in each station. In Phase 2, iRPC (<em>improved</em> RPC) will be installed in stations 3 &amp; 4, and they are labeled as RE3/1 &amp; RE4/1. The traditional RPC chambers are 10° wide, while the iRPC chambers are 20° wide. The following table shows the ϕ coverage for different chamber types. In total, there will be 648 RPC chambers in the endcaps (324 per endcap).</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Chamber type</p></th>
+<th class="head"><p>Coverage</p></th>
+<th class="head"><p>Num. of chambers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RE1/2</p></td>
+<td><p>10 deg</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE1/3</p></td>
+<td><p>10 deg</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-even"><td><p>RE2/2</p></td>
+<td><p>10 deg</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE2/3</p></td>
+<td><p>10 deg</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-even"><td><p>RE3/1</p></td>
+<td><p>20 deg</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE3/2</p></td>
+<td><p>10 deg</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-even"><td><p>RE3/3</p></td>
+<td><p>10 deg</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE4/1</p></td>
+<td><p>20 deg</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-even"><td><p>RE4/2</p></td>
+<td><p>10 deg</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE4/3</p></td>
+<td><p>10 deg</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p>648 (total)</p></td>
+</tr>
+</tbody>
+</table>
+<p>In addition, there are 4 RPC stations in the barrel, namely RB1, RB2, RB3, and RB4. RB1 &amp; RB2 have two layers, while RB3 &amp; RB4 have only one layer. The chambers in RB3 &amp; RB4 are divided into two along ϕ. All the chambers are divided into 5 wheels along the z-axis. The following table shows the ϕ coverage for the barrel RPC chamber types. In total, there are 480 RPC chambers in the barrel.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Chamber type</p></th>
+<th class="head"><p>Coverage</p></th>
+<th class="head"><p>Num. of chambers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RB1in</p></td>
+<td><p>30 deg</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-odd"><td><p>RB1out</p></td>
+<td><p>30 deg</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-even"><td><p>RB2in</p></td>
+<td><p>30 deg</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-odd"><td><p>RB2out</p></td>
+<td><p>30 deg</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-even"><td><p>RB3</p></td>
+<td><p>15 deg</p></td>
+<td><p>120</p></td>
+</tr>
+<tr class="row-odd"><td><p>RB4</p></td>
+<td><p>15 deg</p></td>
+<td><p>120</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p>480 (total)</p></td>
+</tr>
+</tbody>
+</table>
+<p>For L1 trigger, certain chambers are shared between two trigger sectors to ensure coverage at the sector boundaries. In stations 1 &amp; 2, there are 12 native chambers and 2 neighbor chambers in each station. In stations 3 &amp; 4, there are 15 native chambers and 3 neighbor chambers. Therefore, each trigger sector consists of 64 chambers (54 without neighbor sharing), as shown in the following table.</p>
+<p>Note that in Phase 1, EMTF receives the RPC input via CPPF. RE1/3 and RE2/3 are not included. Therefore, each trigger sector consists of 42 chambers (36 without neighbor sharing) in Phase 1.</p>
+<!--What to do with barrel RPC?-->
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Chamber type</p></th>
+<th class="head"><p>Coverage</p></th>
+<th class="head"><p>Num. of chambers<br/>(native only)</p></th>
+<th class="head"><p>Num. of chambers<br/>(incl. neighbor)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RE1/2</p></td>
+<td><p>10 deg</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE1/3</p></td>
+<td><p>10 deg</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>RE2/2</p></td>
+<td><p>10 deg</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE2/3</p></td>
+<td><p>10 deg</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>RE3/1</p></td>
+<td><p>20 deg</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE3/2</p></td>
+<td><p>10 deg</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>RE3/3</p></td>
+<td><p>10 deg</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE4/1</p></td>
+<td><p>20 deg</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>RE4/2</p></td>
+<td><p>10 deg</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>RE4/3</p></td>
+<td><p>10 deg</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p>54 (total)</p></td>
+<td><p>64 (total)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="chamber">
+<h2>Chamber<a class="headerlink" href="#chamber" title="Permalink to this headline">¶</a></h2>
+<p>Each chamber sends up to 2 RPC clusters.</p>
+</div>
+<div class="section" id="data-word">
+<h2>Data word<a class="headerlink" href="#data-word" title="Permalink to this headline">¶</a></h2>
+<p>Each cluster is encoded into ?? bits.</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="muon-csc.html" title="previous page">Cathode Strip Chamber</a>
+    <a class='right-next' id="next-link" href="muon-gem.html" title="next page">Gas Electron Multiplier</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
