@@ -41,5 +41,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./${BOOK_PATH}/_build/html
-
+        #publish_dir: ./${BOOK_PATH}/_build/html  # Why doesn't environment variable work?
+        publish_dir: ./Jul2020/_build/html
