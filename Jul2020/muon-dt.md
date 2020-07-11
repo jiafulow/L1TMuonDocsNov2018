@@ -27,6 +27,8 @@ For L1 trigger, certain chambers are shared between two trigger sectors to ensur
 
 Each chamber sends up to 2 DT segments.
 
+A DT chamber is made of 3 superlayers, each superlayer consists of 3 layers. 2 superlayers measure the position in the R-ϕ plane, while 1 superlayer measures the position in the R-z plane.
+
 ## Data word
 
 Each segment is encoded into ?? bits.
