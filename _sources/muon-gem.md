@@ -2,16 +2,16 @@
 
 ## Geometry
 
-There are 3 GEM stations in the endcaps, namely GE1/1, GE2/1, and ME0. GE1/1 will be installed during LS2, while GE2/1 and ME0 will be installed during LS3. The GE1/1 chambers are 10° wide, while the GE2/1 and ME0 chambers are 20° wide. The following table shows the ϕ coverage for different chamber types. In total, there will be 144 GEM chambers (72 per endcap).
+There are 3 GEM stations in the endcaps, namely GE1/1, GE2/1, and ME0. GE1/1 will be installed during LS2, while GE2/1 and ME0 will be installed during LS3. The GE1/1 chambers are 10° wide, while the GE2/1 and ME0 chambers are 20° wide. The GE1/1 and GE2/1 detectors are made of 2 layers of triple-GEM chambers, called superchambers. The ME0 detectors are made of 6 layers of triple-GEM chambers, called stacks. The following table shows the ϕ coverage for different chamber types. In total, there will be 144 GEM chambers (72 per endcap).
 
 |Chamber type|Coverage|Num. of chambers|
 |------------|--------|----------------|
-|GE1/1       |10 deg  |72              |
-|GE2/1       |20 deg  |36              |
-|ME0         |20 deg  |36              |
-|            |        |144 (total)     |
+|GE1/1       |10 deg  |144             |
+|GE2/1       |20 deg  |72              |
+|ME0         |20 deg  |216             |
+|            |        |432 (total)     |
 
-For L1 trigger, certain chambers are shared between two trigger sectors to ensure coverage at the sector boundaries. GE1/1 has 6 native chambers and 1 neighbor chamber, GE2/1 has 3 native chambers and 1 neighbor chamber, and ME0 has 3 native chambers and 1 neighbor chamber. Therefore, each trigger sector consists of 15 chambers (12 without neighbor sharing), as shown in the following table.
+For L1 trigger, certain chambers are shared between two trigger sectors to ensure coverage at the sector boundaries. In the following, a superchamber for GE1/1 and GE2/1 is referred to as a chamber. Same with a stack for ME0. GE1/1 has 6 native chambers and 1 neighbor chamber, GE2/1 has 3 native chambers and 1 neighbor chamber, and ME0 has 3 native chambers and 1 neighbor chamber. Therefore, each trigger sector consists of 15 chambers (12 without neighbor sharing), as shown in the following table.
 
 |Chamber type|Coverage|Num. of chambers<br/>(native only)|Num. of chambers<br/>(incl. neighbor)|
 |------------|--------|----------------|----------------|
