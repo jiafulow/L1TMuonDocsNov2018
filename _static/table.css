@@ -1,19 +1,18 @@
-th, td {
-	border: 1px solid #e1e4e8;
-	/*border-radius: 3px;*/
-	padding: 6px;
+.table p {
+	margin: 0;
 }
 
-th {
+.table td, .table th {
+	padding: .5rem;
+	border: 1px solid #e1e4e8;
+}
+
+.table thead td, .table thead th {
 	background-color: #f1f8ff;
 	border-color: #c8e1ff;
 	border-bottom-width: 0;
 }
 
-tr:nth-child(even) {
+.table tbody tr:nth-child(even) {
 	background-color: #f6f8fa;
-}
-
-.bd-content .section table p {
-	margin: 0;
 }
