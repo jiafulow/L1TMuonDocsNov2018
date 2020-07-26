@@ -13,3 +13,7 @@ th {
 tr:nth-child(even) {
 	background-color: #f6f8fa;
 }
+
+.bd-content .section table p {
+	margin: 0;
+}
